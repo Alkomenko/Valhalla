@@ -6,10 +6,16 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed;
-    public float lufetime;
+    public float lifetime;
     public float distance;
     public int damage;
     public LayerMask whatIsSolid;
+    public GameObject destroyEffect;
+
+    private void Start()
+    {
+        Invoke("DestroyBullet", lifetime);
+    }
 
     private void Update()
     {
@@ -20,10 +26,18 @@ public class Bullet : MonoBehaviour
             {
                 hitInfo.collider.GetComponent<Enemy>().TakeDamage(damage);
             }
+            DestroyBullet();
 
             Destroy(gameObject);
         }
 
         transform.Translate(Vector2.up * (speed * Time.deltaTime));
+    }
+
+    public void DestroyBullet()
+    {
+        Instantiate(destroyEffect, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+
     }
 }
