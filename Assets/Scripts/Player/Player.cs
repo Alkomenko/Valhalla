@@ -62,6 +62,8 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
+        
+        LimitMove();
     }
     
     private void Flip()
@@ -74,5 +76,13 @@ public class Player : MonoBehaviour
     public void ChangeHealth(int healthValue)
     {
         health += healthValue;
+    }
+
+    private void LimitMove()
+    {
+        Vector2 leftTop = Camera.main.ViewportToWorldPoint(new Vector3(0, 1));
+        Vector2 rightDown = Camera.main.ViewportToWorldPoint(new Vector3(1, 0));
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, leftTop.x, rightDown.x),
+            Mathf.Clamp(transform.position.y, rightDown.y, leftTop.y));
     }
 }
