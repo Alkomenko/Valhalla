@@ -17,11 +17,13 @@ public class Enemy : MonoBehaviour
     private GameObject player;
     public TMP_Text textDamage;
 
+    private Statistics statistics;
     private void Awake()
     {
         player = GameObject.FindWithTag("Player");
         animator = GetComponent<Animator>();
         boxCollider2D = GetComponent<BoxCollider2D>();
+        statistics = FindObjectOfType<Statistics>();
     }
 
     private bool isDead;
@@ -44,6 +46,7 @@ public class Enemy : MonoBehaviour
     IEnumerator Dead()
     {
         isDead = true;
+        statistics.score++;
         boxCollider2D.enabled = false;
         transform.GetChild(0).gameObject.SetActive(false);
         int randomIdAnimation = UnityEngine.Random.Range(0, 2);

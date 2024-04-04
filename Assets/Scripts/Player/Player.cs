@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
         {
             joystick.gameObject.SetActive(false);
         }
+        LimitMove();
     }
     void Update()
     {
@@ -58,12 +59,9 @@ public class Player : MonoBehaviour
         }
             
     }
-
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
-        
-        LimitMove();
     }
     
     private void Flip()
