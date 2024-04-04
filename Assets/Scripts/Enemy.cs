@@ -24,12 +24,12 @@ public class Enemy : MonoBehaviour
     private bool isDead;
     private void Update()
     {
-        if (health <= 0)
+        if (!isDead)
         {
-            if(!isDead)StartCoroutine(Dead());
+            if (health <= 0) StartCoroutine(Dead());
+            Move();
         }
-
-        Move();
+        
     }
 
     void Move()
@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour
         isDead = true;
         boxCollider2D.enabled = false;
         transform.GetChild(0).gameObject.SetActive(false);
-        int randomIdAnimation = UnityEngine.Random.Range(0, 2);
+        int randomIdAnimation = UnityEngine.Random.Range(0, 1);
         animator.SetInteger(Animator.StringToHash("Dead"), randomIdAnimation);
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);
