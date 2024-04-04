@@ -24,6 +24,6 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
 
-        transform.Translate(Vector2.up * speed * Time.deltaTime);
+        transform.Translate(Vector2.up * (speed * Time.deltaTime));
     }
 }

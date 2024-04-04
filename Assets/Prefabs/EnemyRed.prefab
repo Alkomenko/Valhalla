@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1445084223552663819}
   - component: {fileID: 4054874984761691808}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 8731963256279969519}
   - component: {fileID: 7109978693774426457}
   - component: {fileID: 3130436917253204893}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: EnemyRed
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -240,7 +240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5987296809191480522}
   - component: {fileID: 8462893463614498094}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5584525266183408522}
   - component: {fileID: 3120836132768585729}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
