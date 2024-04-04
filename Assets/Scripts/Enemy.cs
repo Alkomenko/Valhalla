@@ -1,29 +1,52 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using Random = System.Random;
 
 public class Enemy : MonoBehaviour
 {
-    private float timeBtwAttack;
-    public float startTimeBtwAttack;
     public int health;
     public float speed;
     public int damage;
-    private float stopTime;
-    public float startStopTime;
-    public float normalSpeed;
+    private Animator animator;
+    private BoxCollider2D boxCollider2D;
+    private GameObject player;
 
+    private void Awake()
+    {
+        player = GameObject.FindWithTag("Player");
+        animator = GetComponent<Animator>();
+        boxCollider2D = GetComponent<BoxCollider2D>();
+    }
+
+    private bool isDead;
     private void Update()
     {
         if (health <= 0)
         {
-            Destroy(gameObject);
+            if(!isDead)StartCoroutine(Dead());
         }
-        transform.Translate(Vector2.left * speed * Time.deltaTime);
+
+        Move();
     }
 
-    public void TakeDamage(int damage)
+    void Move()
     {
-        health -= damage;
+        transform.position =
+            Vector2.MoveTowards(transform.position, player.transform.position, Time.deltaTime * speed);
     }
+    IEnumerator Dead()
+    {
+        isDead = true;
+        boxCollider2D.enabled = false;
+        transform.GetChild(0).gameObject.SetActive(false);
+        int randomIdAnimation = UnityEngine.Random.Range(0, 2);
+        animator.SetInteger(Animator.StringToHash("Dead"), randomIdAnimation);
+        yield return new WaitForSeconds(2f);
+        Destroy(gameObject);
+    }
+
+    public void TakeDamage(int damageVal) => health -= damageVal;
 }
