@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6333601983056656815}
   - component: {fileID: 3440078202479665647}
   m_Layer: 0
-  m_Name: arrow_bow_PNG21
+  m_Name: arrowPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
