@@ -57,7 +57,7 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damageVal)
     {
-        StartCoroutine(CreateTextDamage(damageVal));
+        /*StartCoroutine(CreateTextDamage(damageVal));*/
         health -= damageVal;
     }
 

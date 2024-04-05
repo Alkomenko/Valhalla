@@ -18,6 +18,6 @@ public class DisplayScore : MonoBehaviour
 
     private void Update()
     {
-        tmpText.text = "Score: " +statistics.score + "";
+        tmpText.text = "Убито: " +statistics.score + "";
     }
 }
