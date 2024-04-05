@@ -8,20 +8,18 @@ public class WeaponSwitch : MonoBehaviour
     public GameObject bow;
     public GameObject sword;
 
-    private void Update()
+    public void SwitchWeapon()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (bow.activeInHierarchy == true)
         {
-            if (bow.activeInHierarchy == true)
-            {
-                bow.SetActive(false);
-                sword.SetActive(true);
-            }
-            else if (sword.activeInHierarchy == true)
-            {
-                sword.SetActive(false);
-                bow.SetActive(true);
-            }
+            bow.SetActive(false);
+            sword.SetActive(true);
+        }
+        else if (sword.activeInHierarchy == true)
+        {
+            sword.SetActive(false);
+            bow.SetActive(true);
         }
     }
+
 }
