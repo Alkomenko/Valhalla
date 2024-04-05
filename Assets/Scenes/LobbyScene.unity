@@ -413,7 +413,7 @@ GameObject:
   m_Component:
   - component: {fileID: 184448043}
   - component: {fileID: 184448044}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -496,7 +496,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 212973481}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: shotPoint
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -629,7 +629,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 251288912}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -662,14 +662,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 316239553}
-  - component: {fileID: 316239560}
   - component: {fileID: 316239559}
-  - component: {fileID: 316239561}
   - component: {fileID: 316239557}
   - component: {fileID: 316239555}
   - component: {fileID: 316239554}
   - component: {fileID: 316239558}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -823,32 +821,6 @@ MonoBehaviour:
   attackRange: 1.29
   damage: 3
   anim: {fileID: 316239558}
---- !u!114 &316239560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 316239552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f528699c173170a438498fc325cce7d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bow: {fileID: 1377721217}
-  sword: {fileID: 1514924271}
---- !u!114 &316239561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 316239552}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65e81176b4b766f4b99f922f79bd3364, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &338796990
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,7 +961,7 @@ GameObject:
   m_Component:
   - component: {fileID: 456290108}
   - component: {fileID: 456290109}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: arm1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1322,6 +1294,92 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &551885687
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 551885689}
+  - component: {fileID: 551885688}
+  m_Layer: 8
+  m_Name: CameraBorder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!60 &551885688
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551885687}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 26.999512, y: 17.738012}
+      - {x: -27.37453, y: 17.834528}
+      - {x: -27.38154, y: -15.323037}
+      - {x: -27.026236, y: -17.090017}
+      - {x: 26.839264, y: -17.047634}
+      - {x: 26.84494, y: -17.035397}
+      - {x: 27.084244, y: -15.334592}
+      - {x: 27.096766, y: -15.346882}
+      - {x: 27.109465, y: 17.804024}
+  m_UseDelaunayMesh: 0
+--- !u!4 &551885689
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551885687}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.13495, y: 0.13739, z: -8.93}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1103526739}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &589020651
 GameObject:
   m_ObjectHideFlags: 0
@@ -21531,7 +21589,7 @@ GameObject:
   m_Component:
   - component: {fileID: 775904371}
   - component: {fileID: 775904372}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21614,7 +21672,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 781403178}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: attackPos
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -21648,7 +21706,7 @@ GameObject:
   - component: {fileID: 804373103}
   - component: {fileID: 804373102}
   - component: {fileID: 804373101}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24875,7 +24933,7 @@ GameObject:
   m_Component:
   - component: {fileID: 892783774}
   - component: {fileID: 892783775}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24958,7 +25016,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 976960475}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25153,6 +25211,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 551885689}
   - {fileID: 691955896}
   - {fileID: 1872870174}
   - {fileID: 804373100}
@@ -25448,7 +25507,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: In progress..
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -25511,7 +25570,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -47.83609, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -25548,7 +25607,7 @@ GameObject:
   - component: {fileID: 1377721218}
   - component: {fileID: 1377721220}
   - component: {fileID: 1377721219}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25717,7 +25776,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1514924272}
   - component: {fileID: 1514924273}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: axe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25949,7 +26008,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1594600193}
   - component: {fileID: 1594600194}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: arm2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26033,7 +26092,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1639897734}
   - component: {fileID: 1639897735}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26492,6 +26551,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1872780948}
   - component: {fileID: 1872780947}
+  - component: {fileID: 1872780949}
   m_Layer: 0
   m_Name: Virtual Camera
   m_TagString: Untagged
@@ -26554,6 +26614,23 @@ Transform:
   - {fileID: 1667824567}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1872780949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872780946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2fba25a5cd15594e8f050a11e386c80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ConfineMode: 0
+  m_BoundingVolume: {fileID: 0}
+  m_BoundingShape2D: {fileID: 551885688}
+  m_ConfineScreenEdges: 1
+  m_Damping: 0
 --- !u!1 &1872870173
 GameObject:
   m_ObjectHideFlags: 0
@@ -26566,7 +26643,7 @@ GameObject:
   - component: {fileID: 1872870176}
   - component: {fileID: 1872870175}
   - component: {fileID: 1872870177}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Facilities
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27321,10 +27398,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2629927016177954470, guid: e31d550f501a96242804f0a96ade9025,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4456339571330156757, guid: e31d550f501a96242804f0a96ade9025,
         type: 3}
       propertyPath: m_Name
       value: EnemyRed
+      objectReference: {fileID: 0}
+    - target: {fileID: 4456339571330156757, guid: e31d550f501a96242804f0a96ade9025,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4787194343142445633, guid: e31d550f501a96242804f0a96ade9025,
         type: 3}
@@ -27375,6 +27462,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471119013909561645, guid: e31d550f501a96242804f0a96ade9025,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7137743431602323812, guid: e31d550f501a96242804f0a96ade9025,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

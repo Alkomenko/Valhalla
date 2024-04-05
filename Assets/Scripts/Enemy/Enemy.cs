@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour
     void Move()
     {
         transform.position =
-            Vector2.MoveTowards(transform.position, player.transform.position, Time.deltaTime * speed);
+            Vector2.MoveTowards(transform.position + transform.forward, player.transform.position, Time.deltaTime * speed);
     }
     IEnumerator Dead()
     {
