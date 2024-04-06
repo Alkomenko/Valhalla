@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -13,6 +12,7 @@ public class Player : MonoBehaviour
     public float health;
     public float speed;
     public int numOfHearts;
+    public float heal;
     
     public Image[] hearts;
     public Sprite fullHeart;
@@ -25,7 +25,6 @@ public class Player : MonoBehaviour
     private Vector2 moveVelocity;
     private Animator anim;
     public GameObject DeadPanel;
-    public EnemySpawn enemySpawn;
 
     private bool facingRight = true;
     void Start()
@@ -51,6 +50,7 @@ public class Player : MonoBehaviour
             health = numOfHearts;
         }
 
+        health += Time.deltaTime * heal;
         for (int i = 0; i < hearts.Length; i++)
         {
             if (i < Mathf.RoundToInt(health))

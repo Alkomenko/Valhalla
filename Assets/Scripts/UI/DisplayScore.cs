@@ -8,6 +8,7 @@ public class DisplayScore : MonoBehaviour
 {
     private Statistics statistics;
     private TMP_Text tmpText;
+    public GameObject WinPanel;
 
     private void Awake()
     {
@@ -16,6 +17,11 @@ public class DisplayScore : MonoBehaviour
     }
     private void Update()
     {
+        if (statistics.score >= 5)
+        {
+            WinPanel.SetActive(true);
+        }
+
         tmpText.text = "Убито: " +statistics.score + "";
     }
 }
