@@ -1,23 +1,24 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.Mathematics;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using Random = System.Random;
 
 public class Enemy : MonoBehaviour
 {
-    public int health;
+    
+    public int maxHealth = 100;
+    private int currentHealth;
     public float speed;
     public int damage;
-    private Animator animator;
+    
+    public Animator animator;
     private BoxCollider2D boxCollider2D;
     private GameObject player;
     public TMP_Text textDamage;
-
     private Statistics statistics;
+    
+    private bool isDead;
+    
     private void Awake()
     {
         player = GameObject.FindWithTag("Player");
@@ -26,49 +27,52 @@ public class Enemy : MonoBehaviour
         statistics = FindObjectOfType<Statistics>();
     }
 
-    private bool isDead;
+    
+    void Start()
+    {
+        currentHealth = maxHealth;
+    }
+    
     private void Update()
     {
         if (!isDead)
         {
-            if (health <= 0) StartCoroutine(Dead());
+            if (currentHealth <= 0) StartCoroutine(Die());
             LocalScaleRotate();
             Move();
         }
         
     }
-
     void Move()
     {
         transform.position =
             Vector2.MoveTowards(transform.position + transform.forward, player.transform.position, Time.deltaTime * speed);
     }
-    IEnumerator Dead()
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        
+        StartCoroutine(CreateTextDamage(damage));
+        animator.SetTrigger("Hurt");
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    IEnumerator Die()
     {
         isDead = true;
+        animator.SetBool("Dead", true);
+        GetComponent<Collider2D>().enabled = false;
+        this.enabled = false;
         statistics.score++;
         boxCollider2D.enabled = false;
-        transform.GetChild(0).gameObject.SetActive(false);
-        int randomIdAnimation = UnityEngine.Random.Range(0, 2);
-        animator.SetInteger(Animator.StringToHash("Dead"), randomIdAnimation);
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);
-    }
-
-    public void TakeDamage(int damageVal)
-    {
-        /*StartCoroutine(CreateTextDamage(damageVal));*/
-        health -= damageVal;
-    }
-
-  //  public void OnTriggerEnter2D(Collider2D other)
-  //  {
-  //      if (other.CompareTag("Player"))
-  //     {
-  //          other.GetComponent<Player>().TakeDamage(damage);
-  //      }
-  //  }
-
+    } 
     void LocalScaleRotate()
     {
         if (player.transform.position.x > transform.position.x)
@@ -80,7 +84,7 @@ public class Enemy : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
         }
     }
-
+    
     IEnumerator CreateTextDamage(int damageVal)
     {
         TMP_Text text = Instantiate(textDamage,
@@ -90,4 +94,5 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         Destroy(text.gameObject);
     }
+    
 }

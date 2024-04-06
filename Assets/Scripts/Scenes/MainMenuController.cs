@@ -9,7 +9,7 @@ public class MainMenuController : MonoBehaviour
     public void PlayGame()
     {
         Debug.Log("Игра начинается!");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); 
         // SceneManager.LoadScene("Scenes/GameScene");
     }
 
