@@ -1,14 +1,21 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     public ControlType controlType;
     public Joystick joystick;
-    public float speed;
     public float health;
+    public float speed;
+    public int numOfHearts;
+    
+    public Image[] hearts;
+    public Sprite fullHeart;
+    public Sprite emptyHeart;
 
     public enum ControlType{PC, Android}
 
@@ -16,6 +23,7 @@ public class Player : MonoBehaviour
     private Vector2 moveInput;
     private Vector2 moveVelocity;
     private Animator anim;
+    public GameObject DeadPanel;
 
     private bool facingRight = true;
     void Start()
@@ -27,7 +35,57 @@ public class Player : MonoBehaviour
             joystick.gameObject.SetActive(false);
         }
     }
+    
     void Update()
+    {
+        Move();
+    }
+    private void FixedUpdate()
+    {
+        rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
+        
+        if (health > numOfHearts)
+        {
+            health = numOfHearts;
+        }
+
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            if (i < Mathf.RoundToInt(health))
+            {
+                hearts[i].sprite = fullHeart;
+            }
+            else
+            {
+                hearts[i].sprite = emptyHeart;
+            }
+
+            if (i < numOfHearts)
+            {
+                hearts[i].enabled = true;
+            }
+            else
+            {
+                hearts[i].enabled = false;
+            }
+
+            if (health < 1)
+            {
+                DeadPanel.SetActive(true);
+                Destroy(gameObject);
+            }
+        }
+    }
+    
+    private void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 Scaler = transform.localScale;
+        Scaler.x *= -1;
+        transform.localScale = Scaler;
+    }
+
+    void Move()
     {
         if (controlType == ControlType.PC)
         {
@@ -56,22 +114,5 @@ public class Player : MonoBehaviour
         {
             Flip();
         }
-            
-    }
-    private void FixedUpdate()
-    {
-        rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
-    }
-    
-    private void Flip()
-    {
-        facingRight = !facingRight;
-        Vector3 Scaler = transform.localScale;
-        Scaler.x *= -1;
-        transform.localScale = Scaler;
-    }
-    public void ChangeHealth(int healthValue)
-    {
-        health += healthValue;
     }
 }

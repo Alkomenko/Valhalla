@@ -1,87 +1,97 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Enemy : MonoBehaviour
 {
     
     public int maxHealth = 100;
-    private int currentHealth;
+    private int health;
     public float speed;
     public int damage;
+    public GameObject bloodPrefab;
+    public float startTimeBtwAttack;
+    private float timeBtwAttack;
+    private float stopTime;
+    public float startStopTime;
+    public float normalSpeed;
+    
     
     public Animator animator;
     private BoxCollider2D boxCollider2D;
-    private GameObject player;
+    private GameObject player1;
+    private Player player;
     public TMP_Text textDamage;
     private Statistics statistics;
     
-    private bool isDead;
-    
-    private void Awake()
+    void Start()
     {
-        player = GameObject.FindWithTag("Player");
+        player1 = GameObject.FindWithTag("Player");
         animator = GetComponent<Animator>();
         boxCollider2D = GetComponent<BoxCollider2D>();
         statistics = FindObjectOfType<Statistics>();
-    }
-
-    
-    void Start()
-    {
-        currentHealth = maxHealth;
+        player = FindObjectOfType<Player>();
+        health = maxHealth;
+        normalSpeed = speed;
     }
     
     private void Update()
     {
-        if (!isDead)
+        Move();
+        Rotate();
+
+        if (stopTime <= 0)
         {
-            if (currentHealth <= 0) StartCoroutine(Die());
-            LocalScaleRotate();
-            Move();
+            speed = normalSpeed;
         }
-        
+        else
+        {
+            speed = 0;
+            stopTime -= Time.deltaTime;
+        }
     }
     void Move()
-    {
+    {  
         transform.position =
-            Vector2.MoveTowards(transform.position + transform.forward, player.transform.position, Time.deltaTime * speed);
+            Vector2.MoveTowards(transform.position + transform.forward, player1.transform.position, Time.deltaTime * speed);
     }
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-        
+        stopTime = startStopTime;
         StartCoroutine(CreateTextDamage(damage));
         animator.SetTrigger("Hurt");
+        health -= damage;
 
-        if (currentHealth <= 0)
+        if (health <= 0)
         {
             Die();
         }
     }
 
-    IEnumerator Die()
+    void Die()
     {
-        isDead = true;
-        animator.SetBool("Dead", true);
+        animator.SetBool("IsDead", true);
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
         statistics.score++;
-        boxCollider2D.enabled = false;
-        yield return new WaitForSeconds(2f);
+        /*yield return new WaitForSeconds(2f); - задержка, не работает IEnumerator*/
         Destroy(gameObject);
-    } 
-    void LocalScaleRotate()
+    }
+
+    void Rotate()
     {
-        if (player.transform.position.x > transform.position.x)
+        if (player1.transform.position.x > transform.position.x)
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.eulerAngles = new Vector3(0, 0, 0);
         }
         else
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.eulerAngles = new Vector3(0, 180, 0);
         }
     }
     
@@ -94,5 +104,35 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         Destroy(text.gameObject);
     }
-    
+
+    /*public void OnAttack()
+    {
+        Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemy);
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            enemies[i].GetComponent<Player>().TakeDamage(damage);
+        }
+    }*/
+    public void OnTriggerStay2D(Collider2D other)
+    {
+        
+        if (other.CompareTag("Player"))
+        {
+            if (timeBtwAttack <= 0)
+            {
+                animator.SetTrigger("attack");
+                OnEnemyAttack();
+            }
+            else
+            {
+                timeBtwAttack -= Time.deltaTime;
+            }
+        }
+    }
+    public void OnEnemyAttack()
+    {
+        Instantiate(bloodPrefab, player.transform.position, Quaternion.identity);
+        player.health -= damage;
+        timeBtwAttack = startTimeBtwAttack;
+    }
 }

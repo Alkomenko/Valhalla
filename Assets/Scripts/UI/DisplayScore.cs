@@ -14,8 +14,6 @@ public class DisplayScore : MonoBehaviour
         tmpText = GetComponent<TMP_Text>();
         statistics = FindObjectOfType<Statistics>();
     }
-
-
     private void Update()
     {
         tmpText.text = "Убито: " +statistics.score + "";
