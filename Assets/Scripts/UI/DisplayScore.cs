@@ -17,7 +17,7 @@ public class DisplayScore : MonoBehaviour
     }
     private void Update()
     {
-        if (statistics.score >= 5)
+        if (statistics.score >= 15)
         {
             WinPanel.SetActive(true);
         }
