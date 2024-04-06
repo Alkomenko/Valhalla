@@ -12,6 +12,7 @@ public class EndGame : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 0f;
         score.text = ("Убито: ") + statistics.score.ToString();
     }
 

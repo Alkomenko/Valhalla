@@ -11,6 +11,7 @@ public class PlayerCombat : MonoBehaviour
 
     public Transform attackPoint;
     public LayerMask enemyLayers;
+    public Joystick joystick;
 
     public float attackRange = 0.5f;
     public int attackDamage = 40;
@@ -20,7 +21,7 @@ public class PlayerCombat : MonoBehaviour
     {
         if (Time.time >= nextAttackTime)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (joystick.Horizontal != 0 || joystick.Vertical != 0)
             {
                 Attack();
                 nextAttackTime = Time.time + 1f / attackRate;

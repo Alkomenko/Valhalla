@@ -12,6 +12,7 @@ public class EnemySpawn : MonoBehaviour
     public GameObject enemyPrefab;
     public float timeRateSpawn;
     private float timeRate;
+    private GameObject player;
 
     private void Update()
     {

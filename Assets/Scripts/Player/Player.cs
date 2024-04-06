@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,6 +25,7 @@ public class Player : MonoBehaviour
     private Vector2 moveVelocity;
     private Animator anim;
     public GameObject DeadPanel;
+    public EnemySpawn enemySpawn;
 
     private bool facingRight = true;
     void Start()
