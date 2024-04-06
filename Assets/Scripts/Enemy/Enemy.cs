@@ -41,8 +41,11 @@ public class Enemy : MonoBehaviour
     
     private void Update()
     {
-        Move();
-        Rotate();
+        if (player != null)
+        {
+            Move();
+            Rotate();
+        }
 
         if (stopTime <= 0)
         {
@@ -55,9 +58,10 @@ public class Enemy : MonoBehaviour
         }
     }
     void Move()
-    {  
+    {
+        Vector2 sum = transform.position + transform.forward;
         transform.position =
-            Vector2.MoveTowards(transform.position + transform.forward, player1.transform.position, Time.deltaTime * speed);
+            Vector2.MoveTowards(sum, player1.transform.position, Time.deltaTime * speed);
     }
 
     public void TakeDamage(int damage)

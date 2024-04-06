@@ -32,14 +32,24 @@ public class PlayerCombat : MonoBehaviour
     void Attack()
     {
         animator.SetTrigger("Attack");
-        
+
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-        
-        foreach (Collider2D enemy in hitEnemies)
+
+        if (hitEnemies != null)
         {
-            enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                Enemy enemyComponent = enemy.GetComponent<Enemy>();
+            
+                if (enemyComponent != null)
+                {
+                    enemyComponent.TakeDamage(attackDamage);
+                }
+                
+            }
         }
     }
+
     private void OnDrawGizmosSelected()
     {
         if (attackPoint == null)
