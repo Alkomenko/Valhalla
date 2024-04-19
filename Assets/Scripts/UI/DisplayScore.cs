@@ -22,6 +22,6 @@ public class DisplayScore : MonoBehaviour
             WinPanel.SetActive(true);
         }
 
-        tmpText.text = "Убито: " +statistics.score + "";
+        tmpText.text = "Score: " +statistics.score + "";
     }
 }
