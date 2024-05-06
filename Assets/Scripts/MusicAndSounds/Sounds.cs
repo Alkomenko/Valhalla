@@ -62,10 +62,12 @@ public class Sounds : MonoBehaviour
         if (CheckMusicButton == true)
         {
             audioSrc.PlayOneShot(clip, 1f);
+            AudioListener.volume = 1f;
         }
         if (CheckMusicButton == false)
         {
             audioSrc.Stop();
+            AudioListener.volume = 1f;
             // audioSrc.PlayOneShot(clip, 0f);
             //audioSrc.IsDestroyed();
         }
