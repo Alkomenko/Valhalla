@@ -631,6 +631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOn: 0
+  soundObj: {fileID: 0}
 --- !u!82 &667131496
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2169,7 +2170,7 @@ GameObject:
   - component: {fileID: 1750857455}
   m_Layer: 0
   m_Name: SoundManager
-  m_TagString: Untagged
+  m_TagString: SoundManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

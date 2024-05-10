@@ -8,6 +8,7 @@ TagManager:
   - Canvas
   - RoomPoint
   - Rooms
+  - SoundManager
   layers:
   - Default
   - TransparentFX

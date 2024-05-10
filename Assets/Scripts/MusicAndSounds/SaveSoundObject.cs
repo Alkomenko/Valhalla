@@ -3,11 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundManager : MonoBehaviour
+public class SoundObject : MonoBehaviour
 {
-    public static SoundManager instance = null;
-    
-    // Сохраняем обьект при переходе со сцены на сцену
+    public static SoundObject instance = null;
     private void Awake()
     {
         if (instance == null)
