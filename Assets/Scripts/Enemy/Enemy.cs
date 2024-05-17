@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
     private float stopTime;
     public float startStopTime;
     public float normalSpeed;
+    private SpawnObjects room;
     
     
     public Animator animator;
@@ -37,6 +38,7 @@ public class Enemy : MonoBehaviour
         player = FindObjectOfType<Player>();
         health = maxHealth;
         normalSpeed = speed;
+        room = GetComponentInParent<SpawnObjects>();
     }
     
     private void Update()
@@ -74,6 +76,7 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             Die();
+            room.enemies.Remove(gameObject);
         }
     }
 

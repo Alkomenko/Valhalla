@@ -9,6 +9,8 @@ TagManager:
   - RoomPoint
   - Rooms
   - SoundManager
+  - Block
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - Enemy
   - Border
   - Object
-  - 
+  - Ground
   - 
   - 
   - 

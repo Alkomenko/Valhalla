@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5148130275417056146}
+  - component: {fileID: 3572333177412761006}
   m_Layer: 0
   m_Name: MainRoom
   m_TagString: Untagged
@@ -34,6 +35,25 @@ Transform:
   - {fileID: 6934765549788697472}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3572333177412761006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2960139661112816653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 918c8c63abe61d942a2fb2b22b5eeae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walls: []
+  wallEffect: {fileID: 0}
+  door: {fileID: 0}
+  enemyTypes: []
+  enemySpawners: []
+  healsPotion: {fileID: 0}
+  enemies: []
 --- !u!1 &8021351832001699647
 GameObject:
   m_ObjectHideFlags: 0
