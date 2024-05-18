@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
             health = numOfHearts;
         }
 
-        health += Time.deltaTime * heal;
+        // health += Time.deltaTime * heal; // Регенерация здоровья
         for (int i = 0; i < hearts.Length; i++)
         {
             if (i < Mathf.RoundToInt(health))
@@ -63,6 +63,15 @@ public class Player : MonoBehaviour
                 DeadPanel.SetActive(true);
                 Destroy(gameObject);
             }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (health < 5 && other.CompareTag("Potion"))
+        {
+            health++;
+            Destroy(other.gameObject);
         }
     }
 }

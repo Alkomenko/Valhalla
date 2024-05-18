@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1196220133476586374}
   - component: {fileID: 3979524212201070268}
   m_Layer: 0
-  m_Name: SpawnPoint
+  m_Name: RoomSpawnPoint
   m_TagString: RoomPoint
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0

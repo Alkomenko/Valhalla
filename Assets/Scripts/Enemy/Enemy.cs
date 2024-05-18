@@ -29,6 +29,9 @@ public class Enemy : MonoBehaviour
     public TMP_Text textDamage;
     private Statistics statistics;
     
+    public GameObject Gem;
+    public Transform transform;
+    
     void Start()
     {
         player1 = GameObject.FindWithTag("Player");
@@ -88,6 +91,7 @@ public class Enemy : MonoBehaviour
         statistics.score++;
         /*yield return new WaitForSeconds(2f); - задержка, не работает IEnumerator*/
         Destroy(gameObject);
+        DropGem();
     }
 
     void Rotate()
@@ -108,7 +112,7 @@ public class Enemy : MonoBehaviour
             new Vector2(transform.position.x + UnityEngine.Random.Range(-1, 1), transform.position.y + UnityEngine.Random.Range(-1, 1)),
             Quaternion.identity);
         text.text = damageVal + "";
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.7f);
         Destroy(text.gameObject);
     }
 
@@ -141,5 +145,13 @@ public class Enemy : MonoBehaviour
         Instantiate(bloodPrefab, player.transform.position, Quaternion.identity);
         player.health -= damage;
         timeBtwAttack = startTimeBtwAttack;
+    }
+    
+    void DropGem()
+    {
+        Vector2 position = transform.position;
+        GameObject gem = Instantiate(Gem, position + new Vector2(0.0f, 1.0f), Quaternion.identity);
+        gem.SetActive(true);
+        Destroy(gem,10f);
     }
 }

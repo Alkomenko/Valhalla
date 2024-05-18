@@ -52,11 +52,6 @@ public class RoomSpawner : MonoBehaviour
                 rand = Random.Range(0, variants.downRooms.Length);
                 Instantiate(variants.downRooms[rand], transform.position, variants.downRooms[rand].transform.rotation);
             }
-            else if (direction == Direction.Right)
-            {
-                rand = Random.Range(0, variants.rightRooms.Length);
-                Instantiate(variants.rightRooms[rand], transform.position, variants.rightRooms[rand].transform.rotation);
-            }
         }
         spawned = true;
     }

@@ -11,6 +11,9 @@ TagManager:
   - SoundManager
   - Block
   - Wall
+  - EnemyPoint
+  - Potion
+  - Gem
   layers:
   - Default
   - TransparentFX

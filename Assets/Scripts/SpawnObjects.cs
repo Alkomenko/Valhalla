@@ -3,21 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class SpawnObjects : MonoBehaviour
 {
     [Header("Walls")]
     public GameObject[] walls;
     public GameObject wallEffect;
-    public GameObject door;
     
     [Header("Enemies")]
     public GameObject enemyPrefab;
     public Transform[] enemySpawners;
-
-    [Header("Powerups")]
-    public GameObject healsPotion;
 
     [HideInInspector] public List<GameObject> enemies;
     private RoomVariants variants;
@@ -28,7 +23,6 @@ public class SpawnObjects : MonoBehaviour
     {
         variants = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomVariants>();
     }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !spawned)
@@ -37,12 +31,12 @@ public class SpawnObjects : MonoBehaviour
 
             foreach (Transform spawner in enemySpawners)
             {
-                GameObject enemy = Instantiate(enemyPrefab, spawner.position, quaternion.identity) as GameObject;
+                GameObject enemy = Instantiate(enemyPrefab, spawner.position, Quaternion.identity) as GameObject;
                 enemy.transform.parent = transform;
                 enemies.Add(enemy);
             }
             StartCoroutine(CheckEnemies());
-        }
+        }   
     }
 
     IEnumerator CheckEnemies()
@@ -68,7 +62,7 @@ public class SpawnObjects : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (wallsDestroyed && other.GetComponent("Wall"))
+        if (wallsDestroyed && other.CompareTag("Wall"))
         {
             Destroy(other.gameObject);
         }
