@@ -19,8 +19,6 @@ public class Player : MonoBehaviour
     public enum ControlType{Android, PC}
     
     public GameObject DeadPanel;
-
-    private bool facingRight = true;
     void Start()
     {
         

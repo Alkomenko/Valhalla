@@ -1439,7 +1439,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 123, y: -71}
+  m_AnchoredPosition: {x: 89, y: -71}
   m_SizeDelta: {x: 251.16, y: 49.57}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &589020653
@@ -1464,16 +1464,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Score
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8a8fca745be1fbc45b7b22ae8c30a755, type: 2}
-  m_sharedMaterial: {fileID: -1485095222049533740, guid: 8a8fca745be1fbc45b7b22ae8c30a755,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4285841919
-  m_fontColor: {r: 1, g: 0.7568628, b: 0.454902, a: 1}
+    rgba: 4283467184
+  m_fontColor: {r: 0.6886792, g: 0.5220482, b: 0.31510323, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3296,7 +3295,7 @@ GameObject:
   - component: {fileID: 1130325334}
   - component: {fileID: 1130325333}
   m_Layer: 5
-  m_Name: Schet
+  m_Name: Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4194,7 +4193,7 @@ GameObject:
   - component: {fileID: 1504619466}
   - component: {fileID: 1504619467}
   m_Layer: 0
-  m_Name: Manager
+  m_Name: EnemyRandomSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5589,74 +5588,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1001 &2117325326
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 727867968485586542, guid: da74546ae3ba36541b7a9711687d724f,
-        type: 3}
-      propertyPath: m_Name
-      value: PotionHP
-      objectReference: {fileID: 0}
-    - target: {fileID: 5076631529530901126, guid: da74546ae3ba36541b7a9711687d724f,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.176471
-      objectReference: {fileID: 0}
-    - target: {fileID: 5076631529530901126, guid: da74546ae3ba36541b7a9711687d724f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.3492899
-      objectReference: {fileID: 0}
-    - target: {fileID: 5076631529530901126, guid: da74546ae3ba36541b7a9711687d724f,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5076631529530901126, guid: da74546ae3ba36541b7a9711687d724f,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5076631529530901126, guid: da74546ae3ba36541b7a9711687d724f,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5076631529530901126, guid: da74546ae3ba36541b7a9711687d724f,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5076631529530901126, guid: da74546ae3ba36541b7a9711687d724f,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5076631529530901126, guid: da74546ae3ba36541b7a9711687d724f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5076631529530901126, guid: da74546ae3ba36541b7a9711687d724f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5076631529530901126, guid: da74546ae3ba36541b7a9711687d724f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: da74546ae3ba36541b7a9711687d724f, type: 3}
 --- !u!1 &2121217720
 GameObject:
   m_ObjectHideFlags: 0
@@ -5943,4 +5874,3 @@ SceneRoots:
   - {fileID: 1504619466}
   - {fileID: 502084606}
   - {fileID: 309137171}
-  - {fileID: 2117325326}

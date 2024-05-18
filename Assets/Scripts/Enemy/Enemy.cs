@@ -30,7 +30,6 @@ public class Enemy : MonoBehaviour
     private Statistics statistics;
     
     public GameObject Gem;
-    public Transform transform;
     
     void Start()
     {
