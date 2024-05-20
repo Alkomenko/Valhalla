@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public ControlType controlType;
     public float health;
     public int numOfHearts;
-    public float heal;
+    //public float heal;
     
     public Image[] hearts;
     public Sprite fullHeart;

@@ -27,6 +27,10 @@ public class Bullet : MonoBehaviour
             {
                 hitInfo.collider.GetComponent<Enemy>().TakeDamage(damage);
             }
+            else if (hitInfo.collider.CompareTag("Boss"))
+            {
+                hitInfo.collider.GetComponent<BossHealth>().TakeDamage(damage);
+            }
             DestroyBullet();
             Destroy(gameObject);
         }

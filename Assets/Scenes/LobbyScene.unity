@@ -722,6 +722,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainRoom
       objectReference: {fileID: 0}
+    - target: {fileID: 288464177096066652, guid: 035ee2b59b3d5214da162d49bda8aae2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3445756654204000411, guid: 035ee2b59b3d5214da162d49bda8aae2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1258,9 +1263,8 @@ MonoBehaviour:
   - {fileID: 9210886424948105461, guid: 03bebd3db58720344bcfe048e90ce246, type: 3}
   - {fileID: 9210886424948105461, guid: 122657b00305a694291093d773c8b0e9, type: 3}
   - {fileID: 9210886424948105461, guid: 4974da662a7969745b9c43a97b5f6044, type: 3}
-  - {fileID: 2960139661112816653, guid: b43091accf963024cb968c095e03eef6, type: 3}
-  bossRoom:
-  - {fileID: 2960139661112816653, guid: b43091accf963024cb968c095e03eef6, type: 3}
+  - {fileID: 9210886424948105461, guid: 10dc436ba65058e40ab3deb59f0af66c, type: 3}
+  bossRoom: []
 --- !u!4 &502084606
 Transform:
   m_ObjectHideFlags: 0
@@ -1697,7 +1701,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joystick: {fileID: 1429771602}
-  Speed: 5
+  Speed: 10
   animator: {fileID: 663855702}
 --- !u!50 &663855699
 Rigidbody2D:
@@ -1887,7 +1891,6 @@ MonoBehaviour:
   controlType: 0
   health: 5
   numOfHearts: 5
-  heal: 0.3
   hearts:
   - {fileID: 467381705}
   - {fileID: 1357712072}
