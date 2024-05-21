@@ -85,12 +85,17 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         animator.SetBool("IsDead", true);
-        GetComponent<Collider2D>().enabled = false;
+        GetComponent<BoxCollider2D>().enabled = false;
+        GetComponent<CircleCollider2D>().enabled = false;
         this.enabled = false;
-        statistics.score++;
-        /*yield return new WaitForSeconds(2f); - задержка, не работает IEnumerator*/
-        Destroy(gameObject);
+        //statistics.score++;
+        Invoke("DelayedDie", 1f); // Вызов метода DelayedDie через * секунды
+    }
+
+    void DelayedDie()
+    {
         DropGem();
+        Destroy(gameObject);
     }
 
     void Rotate()

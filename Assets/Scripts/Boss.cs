@@ -55,6 +55,8 @@ public class Boss : MonoBehaviour
             rb.velocity = new Vector2(speed * direction.x, speed * direction.y);
         }
     }
+    
+    
     /*public void OnAttack()
     {
         Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemy);
@@ -85,4 +87,6 @@ public class Boss : MonoBehaviour
         player.health -= damage;
         timeBtwAttack = startTimeBtwAttack;
     }
+    
+    
 }

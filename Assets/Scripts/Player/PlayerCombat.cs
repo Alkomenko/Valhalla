@@ -46,19 +46,23 @@ public class PlayerCombat : MonoBehaviour
     {
         animator.SetTrigger("Attack");
 
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers); // Добавлен bossLayer к слоям поиска
 
         if (hitEnemies != null)
         {
             foreach (Collider2D enemy in hitEnemies)
             {
                 Enemy enemyComponent = enemy.GetComponent<Enemy>();
-            
+                BossHealth bossComponent = enemy.GetComponent<BossHealth>(); // Добавлен компонент Boss
+
                 if (enemyComponent != null)
                 {
                     enemyComponent.TakeDamage(attackDamage);
                 }
-                
+                else if (bossComponent != null)
+                {
+                    bossComponent.TakeDamage(attackDamage); // Добавлен вызов TakeDamage для босса
+                }
             }
         }
     }
