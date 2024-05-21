@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class StatsUpgrade : MonoBehaviour
@@ -9,13 +10,14 @@ public class StatsUpgrade : MonoBehaviour
     private PlayerCombat _playerCombat;
     public GameObject pauseMenu;
     private Movement _playerMovement;
-    private GemPlayer _gemPlayer;
+    // private GemPlayer _gemPlayer;
 
     public void Start()
     {
         _playerCombat = new PlayerCombat();
-        _gemPlayer = new GemPlayer();
+        // _gemPlayer = new GemPlayer();
         _playerMovement = new Movement();
+        
     }
 
     public void Pause()
@@ -37,7 +39,7 @@ public class StatsUpgrade : MonoBehaviour
     // Прокачка дальности атаки
     public void AttackRangeUp()
     {
-        if (_playerCombat.attackRate < 1f && GemPlayer.gem > 1)
+        if (_playerCombat.attackRate < 1f && GemPlayer.gem >= 1)
         {
             GemPlayer.gem -= 1;
             _playerCombat.attackRate += 0.1f;
@@ -46,16 +48,26 @@ public class StatsUpgrade : MonoBehaviour
         {
             // Логика отображения сообщения о максимальной прокачки.
         }
+        GameObject.FindGameObjectWithTag ("Player").GetComponent<GemPlayer> ().TextGem.text = GemPlayer.gem.ToString();
 
     }
     // Прокачка урона
     public void AttackDamageUp()
     {
 
-        if (_playerCombat.attackDamage < 100 && GemPlayer.gem > 1)
+        if (_playerCombat.attackDamage < 100 && GemPlayer.gem >= 1)
         {
+            Debug.Log("Баланс ДО:" + GemPlayer.gem);
+            
             GemPlayer.gem -= 1;
+            
+            Debug.Log("Баланс ПОСЛЕ:" + GemPlayer.gem);
+            Debug.Log("Атака ДО:" + _playerCombat.attackDamage);
+            
             _playerCombat.attackDamage += 10;
+            
+            Debug.Log("Атака ПОСЛЕ:" + _playerCombat.attackDamage);
+            GameObject.FindGameObjectWithTag ("Player").GetComponent<GemPlayer> ().TextGem.text = GemPlayer.gem.ToString();
         }
         else
         {
@@ -76,7 +88,7 @@ public class StatsUpgrade : MonoBehaviour
     // Прокачка скорости передвижения персонажа
     public void SpeedUp()
     {
-        if (_playerMovement.Speed < 10 && GemPlayer.gem > 1)
+        if (_playerMovement.Speed < 10 && GemPlayer.gem >= 1)
         {
                 GemPlayer.gem -= 1;
                 _playerMovement.Speed += 1;   
@@ -85,5 +97,6 @@ public class StatsUpgrade : MonoBehaviour
         {
             // Логика отображения сообщения о максимальной прокачки.
         }
+        GameObject.FindGameObjectWithTag ("Player").GetComponent<GemPlayer> ().TextGem.text = GemPlayer.gem.ToString();
     }
 }
