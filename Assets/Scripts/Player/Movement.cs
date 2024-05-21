@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
@@ -10,6 +11,12 @@ public class Movement : MonoBehaviour
     public Animator animator;
     private Rigidbody2D rb;
     private Vector2 direction;
+
+    private void Update()
+    {
+        Speed = StatsUpgrade.speed;
+    }
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
