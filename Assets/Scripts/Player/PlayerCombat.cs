@@ -15,7 +15,6 @@ public class PlayerCombat : MonoBehaviour
     public Joystick joystick;
 
     public float attackRange = 0.5f;
-    public int attack;
     public int attackDamage;
     public float attackRate = 2f;
     private float nextAttackTime = 0f;
@@ -36,7 +35,6 @@ public class PlayerCombat : MonoBehaviour
             if (joystick.Horizontal != 0 || joystick.Vertical != 0)
             {
                 Attack();
-                Debug.Log(attackDamage + "  "  + attack);
                 nextAttackTime = Time.time + 1f / attackRate;
             } 
         }
