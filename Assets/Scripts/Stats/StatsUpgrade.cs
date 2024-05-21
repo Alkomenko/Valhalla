@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,14 @@ public class StatsUpgrade : MonoBehaviour
     public GameObject pauseMenu;
     private Movement _playerMovement;
     private GemPlayer _gemPlayer;
-    
+
+    public void Start()
+    {
+        _playerCombat = new PlayerCombat();
+        _gemPlayer = new GemPlayer();
+        _playerMovement = new Movement();
+    }
+
     public void Pause()
     {
         if (Time.timeScale == 1f)
@@ -43,6 +51,7 @@ public class StatsUpgrade : MonoBehaviour
     // Прокачка урона
     public void AttackDamageUp()
     {
+
         if (_playerCombat.attackDamage < 100 /*&& _gemPlayer.gem > 1*/)
         {
             //_gemPlayer.gem--;
