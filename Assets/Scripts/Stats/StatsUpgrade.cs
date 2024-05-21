@@ -37,9 +37,9 @@ public class StatsUpgrade : MonoBehaviour
     // Прокачка дальности атаки
     public void AttackRangeUp()
     {
-        if (_playerCombat.attackRate < 1f /*&& _gemPlayer.gem > 1*/)
+        if (_playerCombat.attackRate < 1f && GemPlayer.gem > 1)
         {
-            // _gemPlayer.gem--;
+            GemPlayer.gem -= 1;
             _playerCombat.attackRate += 0.1f;
         }
         else
@@ -52,9 +52,9 @@ public class StatsUpgrade : MonoBehaviour
     public void AttackDamageUp()
     {
 
-        if (_playerCombat.attackDamage < 100 /*&& _gemPlayer.gem > 1*/)
+        if (_playerCombat.attackDamage < 100 && GemPlayer.gem > 1)
         {
-            //_gemPlayer.gem--;
+            GemPlayer.gem -= 1;
             _playerCombat.attackDamage += 10;
         }
         else
@@ -76,9 +76,9 @@ public class StatsUpgrade : MonoBehaviour
     // Прокачка скорости передвижения персонажа
     public void SpeedUp()
     {
-        if (_playerMovement.Speed < 10 /*&& _gemPlayer.gem > 1*/)
+        if (_playerMovement.Speed < 10 && GemPlayer.gem > 1)
         {
-                // _gemPlayer.gem--;
+                GemPlayer.gem -= 1;
                 _playerMovement.Speed += 1;   
         }
         else
