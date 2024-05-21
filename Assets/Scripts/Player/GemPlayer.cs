@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class GemPlayer : MonoBehaviour {
 	
-	static public int gem;
+	public static int gem;
 
 	[SerializeField]
 	public Text TextGem;
