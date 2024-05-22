@@ -72,4 +72,10 @@ public class Player : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+    
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+    }
+    
 }

@@ -63,7 +63,6 @@ MonoBehaviour:
   textDamage: {fileID: 3105241543755912198, guid: a595694530eba5c499ec010818e44c83,
     type: 3}
   Gem: {fileID: 73336464464734900, guid: 981f90dcc3f2e1746ba72e298faeb3c9, type: 3}
-  transform: {fileID: 4324799357552494479}
 --- !u!50 &8540384303398717030
 Rigidbody2D:
   serializedVersion: 4
@@ -166,7 +165,7 @@ CircleCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 1
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 1.1524986, y: 0.6008222}
   serializedVersion: 2

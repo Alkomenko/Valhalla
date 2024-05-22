@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
     private Player player;
     public TMP_Text textDamage;
     private Statistics statistics;
-    
+
     public GameObject Gem;
     
     void Start()
