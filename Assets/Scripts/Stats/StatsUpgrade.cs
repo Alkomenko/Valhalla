@@ -10,7 +10,7 @@ public class StatsUpgrade : MonoBehaviour
     public GameObject MarketMenu;
     private Movement _playerMovement;
     // private GemPlayer _gemPlayer;
-    public static int attackDamage = 100;
+    public static int attackDamage = 20;
     public static float speed = 5;
 
     public void Pause()
@@ -48,9 +48,9 @@ public class StatsUpgrade : MonoBehaviour
     public void AttackDamageUp()
     {
 
-        if (attackDamage < 100 && GemPlayer.gem >= 5)
+        if (attackDamage < 100 && GemPlayer.gem >= 10)
         {
-            GemPlayer.gem -= 5;
+            GemPlayer.gem -= 10;
             attackDamage += 5;
             
             GameObject.FindGameObjectWithTag ("Player").GetComponent<GemPlayer> ().TextGem.text = GemPlayer.gem.ToString();
@@ -74,9 +74,9 @@ public class StatsUpgrade : MonoBehaviour
     // Прокачка скорости передвижения персонажа
     public void SpeedUp()
     {
-        if (speed < 10 && GemPlayer.gem >= 20)
+        if (speed < 10 && GemPlayer.gem >= 50)
         {
-                GemPlayer.gem -= 20;
+                GemPlayer.gem -= 50;
                 speed += 1;   
         }
         else
