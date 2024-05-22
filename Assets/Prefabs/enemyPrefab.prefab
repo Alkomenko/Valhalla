@@ -57,7 +57,7 @@ MonoBehaviour:
   bloodPrefab: {fileID: 5390221189536479696, guid: 9414b94ac083a224ea37417aaa7a1828,
     type: 3}
   startTimeBtwAttack: 1
-  startStopTime: 0.7
+  startStopTime: 0.2
   normalSpeed: 3
   animator: {fileID: 7808590548852844857}
   textDamage: {fileID: 3105241543755912198, guid: a595694530eba5c499ec010818e44c83,
