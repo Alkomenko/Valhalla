@@ -2751,7 +2751,7 @@ MonoBehaviour:
     m_Bits: 128
   joystick: {fileID: 1377366923}
   attackRange: 1.7
-  attackDamage: 1
+  attackDamage: 20
   attackRate: 1
 --- !u!114 &663855705
 MonoBehaviour:

@@ -95,6 +95,7 @@ public class Enemy : MonoBehaviour
     {
         DropGem();
         Destroy(gameObject);
+        room.enemies.Remove(gameObject);
     }
 
     void Rotate()

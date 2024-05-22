@@ -11,7 +11,7 @@ public class StatsUpgrade : MonoBehaviour
     public GameObject MarketMenu;
     private Movement _playerMovement;
     // private GemPlayer _gemPlayer;
-    public static int attackDamage = 20;
+    public static int attackDamage = 100;
     public static float speed = 5;
 
     public void Pause()
