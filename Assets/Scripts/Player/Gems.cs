@@ -8,9 +8,9 @@ public class Gems : MonoBehaviour {
 
 
 	void OnTriggerEnter2D(Collider2D col) { 
-		GemPlayer.gem += Cost; 
+		GemPlayer.gem += Random.Range (2,5); 
 		GameObject.FindGameObjectWithTag ("Player").GetComponent<GemPlayer> ().TextGem.text = GemPlayer.gem.ToString(); 
 		Destroy (gameObject); 
-		}
+	}
 }
 
