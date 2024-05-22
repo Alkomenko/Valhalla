@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {
@@ -13,10 +14,17 @@ public class Gun : MonoBehaviour
     private Player player;
     private Vector3 difference;
     private float rotZ;
-    
+
+    public int maxArrows; // Максимальное количество стрел
+    private int currentArrows; // Текущее количество стрел
+
+    public Text arrowsCount; // Ссылка на текстовый компонент в канвасе
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        currentArrows = maxArrows;
+        arrowsCount.text = currentArrows.ToString();
         if (player.controlType == Player.ControlType.PC)
         {
             joystick.gameObject.SetActive(false);
@@ -58,8 +66,13 @@ public class Gun : MonoBehaviour
 
     public void Shoot()
     {
-        Instantiate(bullet, shotPoint.position, transform.rotation);
-        timeBtwShots = startTimeBtwShots;
+        if (currentArrows > 0)
+        {
+            Instantiate(bullet, shotPoint.position, transform.rotation);
+            timeBtwShots = startTimeBtwShots;
+            currentArrows--;
+            arrowsCount.text = currentArrows.ToString();
+        }
     }
     
 }

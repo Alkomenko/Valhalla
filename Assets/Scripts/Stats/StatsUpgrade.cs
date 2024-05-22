@@ -8,7 +8,7 @@ public class StatsUpgrade : MonoBehaviour
 {
     public static bool PauseGame;
     private PlayerCombat _playerCombat;
-    public GameObject pauseMenu;
+    public GameObject MarketMenu;
     private Movement _playerMovement;
     // private GemPlayer _gemPlayer;
     public static int attackDamage = 20;
@@ -18,12 +18,12 @@ public class StatsUpgrade : MonoBehaviour
     {
         if (Time.timeScale == 1f)
         {
-            pauseMenu.SetActive(true);
+            MarketMenu.SetActive(true);
             Time.timeScale = 0f;
             PauseGame = true;   
         }
         else if (Time.timeScale == 0f){
-            pauseMenu.SetActive(false);
+            MarketMenu.SetActive(false);
             Time.timeScale = 1f;
             PauseGame = true; 
         }
