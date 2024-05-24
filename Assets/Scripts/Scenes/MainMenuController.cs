@@ -8,8 +8,15 @@ public class MainMenuController : MonoBehaviour
     // Start is called before the first frame update
     public void PlayGame()
     {
-        Debug.Log("Игра начинается!");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); 
+        Debug.Log("Вы запустили обычную игру!");
+        SceneManager.LoadScene("LobbyScene"); 
+        // SceneManager.LoadScene("Scenes/GameScene");
+    }
+    
+    public void PlayFreeGame()
+    {
+        Debug.Log("Вы запустили FreeGame!");
+        SceneManager.LoadScene("FreeGame");; 
         // SceneManager.LoadScene("Scenes/GameScene");
     }
 

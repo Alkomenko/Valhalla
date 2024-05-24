@@ -58,7 +58,7 @@ MonoBehaviour:
     type: 3}
   startTimeBtwAttack: 1
   startStopTime: 0.2
-  normalSpeed: 3
+  normalSpeed: 4
   animator: {fileID: 7808590548852844857}
   textDamage: {fileID: 3105241543755912198, guid: a595694530eba5c499ec010818e44c83,
     type: 3}
@@ -165,7 +165,7 @@ CircleCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 1
-  m_UsedByEffector: 1
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 1.1524986, y: 0.6008222}
   serializedVersion: 2

@@ -52,6 +52,7 @@ public class PlayerCombat : MonoBehaviour
             {
                 Enemy enemyComponent = enemy.GetComponent<Enemy>();
                 BossHealth bossComponent = enemy.GetComponent<BossHealth>();
+                EnemyFreeGame enemyFreeGameComponent = enemy.GetComponent<EnemyFreeGame>();
 
                 if (enemyComponent != null)
                 {
@@ -60,6 +61,10 @@ public class PlayerCombat : MonoBehaviour
                 else if (bossComponent != null)
                 {
                     bossComponent.TakeDamage(attackDamage);
+                }
+                else if (enemyFreeGameComponent != null)
+                {
+                    enemyFreeGameComponent.TakeDamage(attackDamage);
                 }
             }
         }

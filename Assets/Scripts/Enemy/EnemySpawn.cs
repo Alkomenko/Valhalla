@@ -16,7 +16,7 @@ public class EnemySpawn : MonoBehaviour
 
     private void Update()
     {
-        if (timeRate <= 0)
+        if (timeRate < 0)
         {
             StartCoroutine(Spawn());
             timeRate = timeRateSpawn;
