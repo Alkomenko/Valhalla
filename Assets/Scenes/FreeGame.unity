@@ -16900,6 +16900,7 @@ GameObject:
   - component: {fileID: 1423584836}
   - component: {fileID: 1423584838}
   - component: {fileID: 1423584839}
+  - component: {fileID: 1423584840}
   m_Layer: 0
   m_Name: EnemyRandomSpawn
   m_TagString: Untagged
@@ -16973,6 +16974,23 @@ MonoBehaviour:
   enemyPrefab: {fileID: 6321553734039715036, guid: c8ca1be8c302da841b0f527b45b663e9,
     type: 3}
   timeRateSpawn: 180
+--- !u!114 &1423584840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423584835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd220761e69d51345ace839651961014, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  starPrefab: {fileID: 4945287366148979951, guid: b22292db65cb92d4f9e29a4cd796a19a,
+    type: 3}
+  enemyPrefab: {fileID: 727867968485586542, guid: da74546ae3ba36541b7a9711687d724f,
+    type: 3}
+  timeRateSpawn: 60
 --- !u!1001 &1425078841
 PrefabInstance:
   m_ObjectHideFlags: 0
