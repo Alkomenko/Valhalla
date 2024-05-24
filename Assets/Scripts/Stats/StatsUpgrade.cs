@@ -8,6 +8,7 @@ public class StatsUpgrade : MonoBehaviour
     public static bool PauseGame;
     private PlayerCombat _playerCombat;
     public GameObject MarketMenu;
+    public GameObject BackpackMenu;
     private Movement _playerMovement;
     // private GemPlayer _gemPlayer;
     public static int attackDamage = 20;
@@ -16,6 +17,7 @@ public class StatsUpgrade : MonoBehaviour
     public void Resume()
     {
         MarketMenu.SetActive(false);
+        BackpackMenu.SetActive(false);
         Time.timeScale = 1f;
         PauseGame = false;
     }
