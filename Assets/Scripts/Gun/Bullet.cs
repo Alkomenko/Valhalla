@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour
     public float speed;
     public float lifetime;
     public float distance;
-    public int damage;
+    public int damage = 25;
     public LayerMask whatIsSolid;
     public GameObject destroyEffect;
 

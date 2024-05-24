@@ -13,6 +13,12 @@ public class StatsUpgrade : MonoBehaviour
     public static int attackDamage = 20;
     public static float speed = 5;
 
+    public void Resume()
+    {
+        MarketMenu.SetActive(false);
+        Time.timeScale = 1f;
+        PauseGame = false;
+    }
     public void Pause()
     {
         if (Time.timeScale == 1f)
