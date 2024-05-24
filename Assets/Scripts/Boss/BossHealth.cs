@@ -9,6 +9,7 @@ public class BossHealth : MonoBehaviour
 	public int health;
 	public TMP_Text textDamage;
 	public bool isInvulnerable = false;
+	public GameObject WinPanel;
 	
 	private void Start()
 	{
@@ -30,6 +31,7 @@ public class BossHealth : MonoBehaviour
 	void Die()
 	{
 		Destroy(gameObject);
+		WinPanel.SetActive(true);
 	}
 	
 	IEnumerator CreateTextDamage(int damageVal)
